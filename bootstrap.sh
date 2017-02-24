@@ -6,22 +6,27 @@ git pull origin master;
 
 function doIt() {
 	rsync --exclude ".git/" \
-		--exclude ".DS_Store" \
-		--exclude ".osx" \
-		--exclude "bootstrap.sh" \
-		--exclude "README.md" \
-		--exclude "LICENSE-MIT.txt" \
-		-avh --no-perms . ~;
+	      --exclude ".DS_Store" \
+              --exclude "bootstrap.sh" \
+	      --exclude "README.md" \
+              --exclude "LICENSE-MIT.txt" \
+              -avh --no-perms . ~; \
+	source ~/.bash_profile;
+}
+
+function semCommits() {
+	git clone https://github.com/fteem/git-semantic-commits ~/.git-semantic-commits;
 	source ~/.bash_profile;
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
 	doIt;
+	semCommits;
 else
 	read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1;
 	echo "";
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
 		doIt;
+		semCommits;
 	fi;
 fi;
-unset doIt;
