@@ -16,7 +16,7 @@ function doIt() {
 
 function semCommits() {
 	git clone https://github.com/fteem/git-semantic-commits ~/.git-semantic-commits;
-	cd ~/.git-semantic-commits && ./install.sh --scripts;
+	cd ~/.git-semantic-commits && ./install.sh;
 	cd .. && rm -rf ~/.git-semantic-commits;
 }
 
