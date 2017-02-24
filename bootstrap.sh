@@ -16,7 +16,8 @@ function doIt() {
 
 function semCommits() {
 	git clone https://github.com/fteem/git-semantic-commits ~/.git-semantic-commits;
-	source ~/.bash_profile;
+	cd ~/.git-semantic-commits && ./install.sh --scripts;
+	cd .. && rm -rf ~/.git-semantic-commits;
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
