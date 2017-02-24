@@ -47,6 +47,11 @@ brew install homebrew/dupes/openssh
 brew install homebrew/dupes/screen
 brew install homebrew/php/php56 --with-gmp
 
+# Install gpg tools
+brew install gpg
+brew install pinentry-mac
+echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
+
 # Install font tools.
 brew tap bramstein/webfonttools
 brew install sfnt2woff

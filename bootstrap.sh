@@ -7,16 +7,17 @@ git pull origin master;
 function doIt() {
 	rsync --exclude ".git/" \
 	      --exclude ".DS_Store" \
-              --exclude "bootstrap.sh" \
+        --exclude "bootstrap.sh" \
 	      --exclude "README.md" \
-              --exclude "LICENSE-MIT.txt" \
-              -avh --no-perms . ~; \
+        --exclude "LICENSE-MIT.txt" \
+        -avh --no-perms . ~; \
 	source ~/.bash_profile;
 }
 
 function semCommits() {
 	git clone https://github.com/fteem/git-semantic-commits ~/.git-semantic-commits;
-	source ~/.bash_profile;
+	cd ~/.git-semantic-commits && ./install.sh;
+	cd .. && rm -rf ~/.git-semantic-commits;
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
