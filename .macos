@@ -346,6 +346,23 @@ defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool t
 # Install Visual Studio Code settings
 cp -r init/settings.json ~Library/Application\ Support/Code/User/settings.json 2> /dev/null
 
+###############################################################################
+# Screensave                                                                  #
+###############################################################################
+
+# Copy screensaver to the screensaver user directory
+cp -r init/grid-clock.saver ~Library/Screen\ Savers/Grid\ Clock.saver 2> /dev/null
+
+# Set Screensaver to grid clock
+/usr/bin/defaults -currentHost write com.apple.screensaver 'CleanExit' -string "YES"
+/usr/bin/defaults -currentHost write com.apple.screensaver 'PrefsVersion' -int "100"
+/usr/bin/defaults -currentHost write com.apple.screensaver "moduleDict" -dict-add "moduleName" -string "Grid Clock"
+/usr/bin/defaults -currentHost write com.apple.screensaver "moduleDict" -dict-add "path" -string "~/Library/Screen Savers/Grid Clock.saver"
+/usr/bin/defaults -currentHost write com.apple.screensaver "moduleDict" -dict-add "type" -int "0"
+/usr/bin/defaults -currentHost write com.apple.screensaver 'tokenRemovalAction' -int "0"
+
+# Removes the .plist LaunchAgent from inside the User Launch Agent Folder.
+rm -f ~/Library/LaunchAgents/set-screensaver.plist
 
 ###############################################################################
 # Transmission.app                                                            #
