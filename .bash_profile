@@ -45,4 +45,4 @@ fi;
 complete -W "NSGlobalDomain" defaults;
 
 # Add `killall` tab completion for common apps
-complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
+complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;export PATH=/Users/antonyphipps/.nvm/versions/node/v6.10.0/bin:/Users/antonyphipps/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/antonyphipps/.rvm/gems/ruby-2.1.5/bin
