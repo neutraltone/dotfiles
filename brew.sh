@@ -45,7 +45,6 @@ brew install vim --with-override-system-vi
 brew install homebrew/dupes/grep
 brew install homebrew/dupes/openssh
 brew install homebrew/dupes/screen
-brew install homebrew/php/php56 --with-gmp
 
 # Install gpg tools
 brew install gpg
@@ -87,7 +86,6 @@ brew install xz
 # Install other useful binaries.
 brew install ack
 brew install dark-mode
-#brew install exiv2
 brew install git
 brew install git-lfs
 brew install imagemagick --with-webp
@@ -105,6 +103,34 @@ brew install tree
 brew install vbindiff
 brew install webkit2png
 brew install zopfli
+
+# Core casks
+brew cask install --appdir="/Applications" caffeine
+brew cask install --appdir="/Applications" flux
+brew cask install --appdir="/Applications" screencloud
+
+# Dev casks
+brew cask install --appdir="/Applications" codekit
+brew cask install --appdir="/Applications" docker-toolbox
+brew cask install --appdir="/Applications" filezilla
+brew cask install --appdir="/Applications" github-desktop
+brew cask install --appdir="/Applications" vagrant
+brew cask install --appdir="/Applications" virtualbox
+brew cask install --appdir="/Applications" visual-studio-code
+
+# Misc casks
+brew cask install --appdir="/Applications" firefox
+brew cask install --appdir="/Applications" google-chrome
+brew cask install --appdir="/Applications" grandperspective
+brew cask install --appdir="/Applications" lastfm
+brew cask install --appdir="/Applications" lastpass
+brew cask install --appdir="/Applications" mist
+brew cask install --appdir="/Applications" omnifocus
+brew cask install --appdir="/Applications" skype
+brew cask install --appdir="/Applications" slack
+brew cask install --appdir="/Applications" spotify
+brew cask install --appdir="/Applications" telegram
+brew cask install --appdir="/Applications" vlc
 
 # Remove outdated versions from the cellar.
 brew cleanup
