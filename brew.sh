@@ -122,6 +122,7 @@ brew cask install --appdir="/Applications" visual-studio-code
 brew cask install --appdir="/Applications" firefox
 brew cask install --appdir="/Applications" google-chrome
 brew cask install --appdir="/Applications" grandperspective
+brew cask install --appdir="/Applications" keybase
 brew cask install --appdir="/Applications" lastfm
 brew cask install --appdir="/Applications" lastpass
 brew cask install --appdir="/Applications" mist
