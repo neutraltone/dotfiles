@@ -29,6 +29,7 @@ mv composer.phar /usr/local/bin/composer
 
 # Install Valet via composer
 composer global require laravel/valet
+valet install
 
 # Initiate Valet
 mkdir ~/valet
