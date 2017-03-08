@@ -108,12 +108,14 @@ brew install zopfli
 brew cask install --appdir="/Applications" caffeine
 brew cask install --appdir="/Applications" flux
 brew cask install --appdir="/Applications" screencloud
+brew cask install --appdir="/Applications" spectacle
 
 # Dev casks
 brew cask install --appdir="/Applications" codekit
 brew cask install --appdir="/Applications" docker-toolbox
 brew cask install --appdir="/Applications" filezilla
 brew cask install --appdir="/Applications" github-desktop
+brew cask install --appdir="/Applications" sequel-pro
 brew cask install --appdir="/Applications" vagrant
 brew cask install --appdir="/Applications" virtualbox
 brew cask install --appdir="/Applications" visual-studio-code
@@ -129,7 +131,6 @@ brew cask install --appdir="/Applications" mist
 brew cask install --appdir="/Applications" omnifocus
 brew cask install --appdir="/Applications" skype
 brew cask install --appdir="/Applications" slack
-brew cask install --appdir="/Applications" spectacle
 brew cask install --appdir="/Applications" spotify
 brew cask install --appdir="/Applications" telegram
 brew cask install --appdir="/Applications" vlc
