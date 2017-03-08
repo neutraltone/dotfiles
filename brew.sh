@@ -129,6 +129,7 @@ brew cask install --appdir="/Applications" mist
 brew cask install --appdir="/Applications" omnifocus
 brew cask install --appdir="/Applications" skype
 brew cask install --appdir="/Applications" slack
+brew cask install --appdir="/Applications" spectacle
 brew cask install --appdir="/Applications" spotify
 brew cask install --appdir="/Applications" telegram
 brew cask install --appdir="/Applications" vlc
