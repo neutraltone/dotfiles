@@ -133,6 +133,7 @@ brew cask install --appdir="/Applications" skype
 brew cask install --appdir="/Applications" slack
 brew cask install --appdir="/Applications" spotify
 brew cask install --appdir="/Applications" telegram
+brew cask install --appdir="/Applications" transmission
 brew cask install --appdir="/Applications" vlc
 
 # Remove outdated versions from the cellar.
