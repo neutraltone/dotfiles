@@ -1,5 +1,4 @@
 " Use the Tomorrow Night Eigthies theme
-set background=dark
 colorscheme Tomorrow-Night-Eighties
 
 " Make Vim more useful
