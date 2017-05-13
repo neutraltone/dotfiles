@@ -106,7 +106,6 @@ brew install zopfli
 
 # Core casks
 brew cask install --appdir="/Applications" caffeine
-brew cask install --appdir="/Applications" screencloud
 brew cask install --appdir="/Applications" spectacle
 
 # Dev casks
