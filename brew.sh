@@ -108,6 +108,7 @@ brew install zopfli
 brew cask install --appdir="/Applications" caffeine
 brew cask install --appdir="/Applications" flux
 brew cask install --appdir="/Applications" screencloud
+brew cask install --appdir="/Applications" cakebrew
 
 # Dev casks
 brew cask install --appdir="/Applications" codekit
