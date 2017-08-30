@@ -107,6 +107,7 @@ brew install zopfli
 # Core casks
 brew cask install --appdir="/Applications" caffeine
 brew cask install --appdir="/Applications" spectacle
+brew cask install --appdir="/Applications" the-unarchiver
 
 # Dev casks
 brew cask install --appdir="/Applications" codekit
