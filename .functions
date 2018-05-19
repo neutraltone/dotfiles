@@ -234,3 +234,25 @@ function o() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+# `watch` is a command-line tool, part of the Linux procps and procps-ng
+# packages, that runs the specified command repeatedly and displays the results
+# on standard output so you can watch it change over time.
+function watch() {
+    local delay=2
+    local lines=$(tput lines)
+    lines=$((${lines:-25} - 1))
+
+    if [[ "$1" -eq "-n" ]]; then
+        shift
+        delay=$((${1:-2}))
+        shift
+    fi
+
+    while true
+    do
+            clear
+        "$@" | head -n $lines
+        sleep $delay
+    done
+}
