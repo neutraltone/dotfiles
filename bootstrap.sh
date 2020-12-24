@@ -8,8 +8,10 @@ function doIt() {
 	rsync --exclude ".git/" \
 	      --exclude ".DS_Store" \
           --exclude "bootstrap.sh" \
+          --exclude "init" \
     	  --exclude "js.sh" \
           --exclude "ruby.sh" \
+          --exclude "php.sh" \
 	      --exclude "README.md" \
           --exclude "LICENSE-MIT.txt" \
           -avh --no-perms . ~; \
@@ -17,17 +19,32 @@ function doIt() {
 }
 
 function homebrew() {
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	arch -x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 }
 
 function homebrewPackages() {
-	./homebrew.sh
+	bash ./brew.sh
+}
+
+function ruby() {
+	bash ./ruby.sh
+}
+
+function php() {
+	bash ./php.sh
+}
+
+function js() {
+	bash ./js.sh
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
 	doIt;
 	homebrew;
 	homebrewPackages;
+	ruby;
+	php;
+	js;
 else
 	read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1;
 	echo "";
@@ -47,11 +64,16 @@ else
 	read -p "Do you want to setup Ruby with RVM? (y/n) " -n 1;
 	echo "Installing Ruby with RVM..."
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
-		homebrewPackages;
+		ruby;
 	fi;
 	read -p "Do you want to setup PHP and Valet? (y/n) " -n 1;
 	echo "Installing PHP and Valet..."
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
-		homebrewPackages;
+		php;
+	fi;
+	read -p "Do you want to setup Node with Nodenv? (y/n) " -n 1;
+	echo "Installing Node with Nodenv..."
+	if [[ $REPLY =~ ^[Yy]$ ]]; then
+		js;
 	fi;
 fi;

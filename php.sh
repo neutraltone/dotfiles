@@ -8,7 +8,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Check for Projects Directory
 # Create if we don't have it
-if test ! $(cd ~/Projects); then
+if [ ! -d "/path/to/dir" ]; then
 	echo "Creating Projects directory..."
   	mkdir ~/Projects
 fi

@@ -1,4 +1,4 @@
-!/usr/bin/env bash
+#!/usr/bin/env bash
 
 # Install command-line tools using Homebrew.
 
@@ -8,48 +8,40 @@ brew update
 # Upgrade any already-installed formulae.
 brew upgrade
 
+# Save Homebrew’s installed location.
+BREW_PREFIX=$(brew --prefix)
+
 # Install GNU core utilities (those that come with macOS are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew install coreutils
+ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
 
 # Install some other useful utilities like `sponge`.
 brew install moreutils
+
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
-# Install GNU `sed`, overwriting the built-in `sed`.
-brew install gnu-sed --with-default-names
-# Install Bash 4.
-# Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before
-# running `chsh`.
-brew install bash
-brew tap homebrew/versions
-brew install bash-completion2
 
-# Switch to using brew-installed bash as default shell
-if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
-  echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
-  chsh -s /usr/local/bin/bash;
-fi;
+# Install GNU `sed`, overwriting the built-in `sed`.
+brew install gnu-sed
+
+# Install ZSH.
+brew install zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Install `wget` with IRI support.
-brew install wget --with-iri
+brew install wget
 
-# Install RingoJS and Narwhal.
-# Note that the order in which these are installed is important;
-# see http://git.io/brew-narwhal-ringo.
-brew install ringojs
-brew install narwhal
+# Install GnuPG to enable PGP-signing commits.
+brew install gnupg
 
 # Install more recent versions of some macOS tools.
-brew install vim --with-override-system-vi
-brew install homebrew/dupes/grep
-brew install homebrew/dupes/openssh
-brew install homebrew/dupes/screen
-
-# Install gpg tools
-brew install gpg
-brew install pinentry-mac
-echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
+brew install vim
+brew install grep
+brew install openssh
+brew install screen
+brew install php
+brew install gmp
 
 # Install font tools.
 brew tap bramstein/webfonttools
@@ -85,23 +77,22 @@ brew install xz
 
 # Install other useful binaries.
 brew install ack
-brew install dark-mode
+#brew install exiv2
 brew install git
 brew install git-lfs
-brew install imagemagick --with-webp
+brew install gpg
+brew install gs
+brew install imagemagick
 brew install lua
 brew install lynx
 brew install p7zip
 brew install pigz
 brew install pv
 brew install rename
-brew install rhino
-brew install speedtest_cli
+brew install rlwrap
 brew install ssh-copy-id
-brew install testssl
 brew install tree
 brew install vbindiff
-brew install webkit2png
 brew install zopfli
 
 # Core casks
@@ -116,14 +107,14 @@ brew install --cask --appdir="/Applications" dbngin
 brew install --cask --appdir="/Applications" iterm2
 brew install --cask --appdir="/Applications" paw
 brew install --cask --appdir="/Applications" sourcetree
-brew install --cask --appdir="/Applications" table-plus
+brew install --cask --appdir="/Applications" tableplus
 brew install --cask --appdir="/Applications" tinkerwell
 brew install --cask --appdir="/Applications" visual-studio-code
 
 # Design casks
-brew install --cask --appdir="/Applications" affinity-designer
-brew install --cask --appdir="/Applications" affinity-photo
-brew install --cask --appdir="/Applications" affinity-publisher
+# brew install --cask --appdir="/Applications" affinity-designer // missing
+# brew install --cask --appdir="/Applications" affinity-photo // missing
+# brew install --cask --appdir="/Applications" affinity-publisher // missing
 brew install --cask --appdir="/Applications" imagealpha
 brew install --cask --appdir="/Applications" imageoptim
 brew install --cask --appdir="/Applications" sketch
@@ -148,7 +139,8 @@ brew install --cask --appdir="/Applications" little-snitch
 brew install --cask --appdir="/Applications" micro-snitch
 brew install --cask --appdir="/Applications" omnifocus
 brew install --cask --appdir="/Applications" spotify
-brew install --cask --appdir="/Applications" sonos
+brew install --cask --appdir="/Applications" synergy
+# brew install --cask --appdir="/Applications" sonos // missing
 brew install --cask --appdir="/Applications" transmission
 brew install --cask --appdir="/Applications" twitch
 brew install --cask --appdir="/Applications" vlc
