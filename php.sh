@@ -6,32 +6,33 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until the script has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+# Check for Projects Directory
+# Create if we don't have it
+if test ! $(cd ~/Projects); then
+	echo "Creating Projects directory..."
+  	mkdir ~/Projects
+fi
+
 # Check for Homebrew
 # Install if we don't have it
 if test ! $(which brew); then
   echo "Installing homebrew..."
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 # Make sure we’re using the latest Homebrew
 brew update
 
 # Install PHP environment packages
-brew install homebrew/php/php71
-brew install mysql
-
-# Start mysql server
-brew services start mysql
+brew install php
 
 # Install composer globally
-php composer-setup.php --install-dir=bin --filename=composer
-mv composer.phar /usr/local/bin/composer
+brew install composer
 
 # Install Valet via composer
 composer global require laravel/valet
 valet install
 
-# Initiate Valet
-mkdir ~/valet
-cd ~/valet
+# Park valet in Projects DIR
+cd ~/Projects
 valet park
