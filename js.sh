@@ -13,18 +13,7 @@ if test ! $(which brew); then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-# Make sure we’re using the latest Homebrew
-brew update
+# Install Nodenv and yarn package manager
+brew install nodenv
 
-# Install NVM and yarn package manager
-brew install nvm
-brew install yarn
-
-# Remove outdated versions from the cellar
-brew cleanup
-
-# Install the latest LTS version of node with NVM
-nvm install --lts
-
-npm install -g grunt-cli
-npm install -g gulp-cli
+echo "\n# Nodenv\neval "$(nodenv init -)"" >> ~/.bash_profile

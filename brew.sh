@@ -105,39 +105,53 @@ brew install webkit2png
 brew install zopfli
 
 # Core casks
-brew cask install --appdir="/Applications" caffeine
-brew cask install --appdir="/Applications" screencloud
-brew cask install --appdir="/Applications" cakebrew
-brew cask install --appdir="/Applications" the-unarchiver
+brew install --cask --appdir="/Applications" 1password
+brew install --cask --appdir="/Applications" alfred
+brew install --cask --appdir="/Applications" cleanmymac
+brew install --cask --appdir="/Applications" divvy
+brew install --cask --appdir="/Applications" the-unarchiver
 
 # Dev casks
-brew cask install --appdir="/Applications" codekit
-brew cask install --appdir="/Applications" docker-toolbox
-brew cask install --appdir="/Applications" filezilla
-brew cask install --appdir="/Applications" github-desktop
-brew cask install --appdir="/Applications" imagealpha
-brew cask install --appdir="/Applications" imageoptim
-brew cask install --appdir="/Applications" sequel-pro
-brew cask install --appdir="/Applications" vagrant
-brew cask install --appdir="/Applications" virtualbox
-brew cask install --appdir="/Applications" visual-studio-code
+brew install --cask --appdir="/Applications" dbngin
+brew install --cask --appdir="/Applications" iterm2
+brew install --cask --appdir="/Applications" paw
+brew install --cask --appdir="/Applications" sourcetree
+brew install --cask --appdir="/Applications" table-plus
+brew install --cask --appdir="/Applications" tinkerwell
+brew install --cask --appdir="/Applications" visual-studio-code
+
+# Design casks
+brew install --cask --appdir="/Applications" affinity-designer
+brew install --cask --appdir="/Applications" affinity-photo
+brew install --cask --appdir="/Applications" affinity-publisher
+brew install --cask --appdir="/Applications" imagealpha
+brew install --cask --appdir="/Applications" imageoptim
+brew install --cask --appdir="/Applications" sketch
+brew install --cask --appdir="/Applications" zeplin
+
+# Communication casks
+brew install --cask --appdir="/Applications" discord
+brew install --cask --appdir="/Applications" notion
+brew install --cask --appdir="/Applications" slack
+brew install --cask --appdir="/Applications" telegram
+brew install --cask --appdir="/Applications" tuple
+brew install --cask --appdir="/Applications" tweetbot
+brew install --cask --appdir="/Applications" zoom
 
 # Misc casks
-brew cask install --appdir="/Applications" firefox
-brew cask install --appdir="/Applications" google-chrome
-brew cask install --appdir="/Applications" grandperspective
-brew cask install --appdir="/Applications" keybase
-brew cask install --appdir="/Applications" lastfm
-brew cask install --appdir="/Applications" lastpass
-brew cask install --appdir="/Applications" mist
-brew cask install --appdir="/Applications" omnifocus
-brew cask install --appdir="/Applications" skype
-brew cask install --appdir="/Applications" slack
-brew cask install --appdir="/Applications" spotify
-brew cask install --appdir="/Applications" telegram
-brew cask install --appdir="/Applications" transmission
-brew cask install --appdir="/Applications" unified-remote
-brew cask install --appdir="/Applications" vlc
+brew install --cask --appdir="/Applications" binance
+brew install --cask --appdir="/Applications" firefox
+brew install --cask --appdir="/Applications" grandperspective
+brew install --cask --appdir="/Applications" lastfm
+brew install --cask --appdir="/Applications" ledger-live
+brew install --cask --appdir="/Applications" little-snitch
+brew install --cask --appdir="/Applications" micro-snitch
+brew install --cask --appdir="/Applications" omnifocus
+brew install --cask --appdir="/Applications" spotify
+brew install --cask --appdir="/Applications" sonos
+brew install --cask --appdir="/Applications" transmission
+brew install --cask --appdir="/Applications" twitch
+brew install --cask --appdir="/Applications" vlc
 
 # Remove outdated versions from the cellar.
 brew cleanup
