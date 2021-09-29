@@ -77,6 +77,7 @@ brew install xz
 
 # Install other useful binaries.
 brew install ack
+brew install blueutil
 #brew install exiv2
 brew install git
 brew install git-lfs
@@ -95,6 +96,13 @@ brew install tree
 brew install vbindiff
 brew install zopfli
 
+# CLI versions of Apps
+brew install ncspot
+
+# Nerd Fonts
+brew tap homebrew/cask-fonts &&
+brew install --cask font-fira-code-nerd-font
+
 # Core casks
 brew install --cask --appdir="/Applications" 1password
 brew install --cask --appdir="/Applications" alfred
@@ -104,6 +112,7 @@ brew install --cask --appdir="/Applications" the-unarchiver
 
 # Dev casks
 brew install --cask --appdir="/Applications" dbngin
+brew install --cask --appdir="/Applications" firefox-developer-edition
 brew install --cask --appdir="/Applications" iterm2
 brew install --cask --appdir="/Applications" paw
 brew install --cask --appdir="/Applications" sourcetree
@@ -139,6 +148,7 @@ brew install --cask --appdir="/Applications" little-snitch
 brew install --cask --appdir="/Applications" micro-snitch
 brew install --cask --appdir="/Applications" omnifocus
 brew install --cask --appdir="/Applications" spotify
+brew install --cask --appdir="/Applications" steamcmd
 brew install --cask --appdir="/Applications" synergy
 # brew install --cask --appdir="/Applications" sonos // missing
 brew install --cask --appdir="/Applications" transmission

@@ -161,3 +161,49 @@ alias reload="exec $SHELL -l"
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+
+# Run brew with Rosetta2
+alias abrew="arch -x86_64 brew"
+
+# php artisan
+alias art="php artisan"
+
+# ncspot
+alias spot="ncspot"
+
+# Restart bluetooth service
+alias killbluetooth="blueutil -p 0 && sleep 1 && blueutil -p 1"
+
+# Start Projects
+function p-start() {
+	if [ $# -eq 0 ]
+		then
+			echo "No project specified"
+	fi
+
+	if [[ $1 == 'aryeo-runway' ]]
+		then
+		echo "Starting $1"
+		cd ~/Projects/aryeo-runway && code . & npm start
+	fi
+}
+
+# Update Projects
+function p-update() {
+	if [ $# -eq 0 ]
+		then
+			echo "No project specified"
+	fi
+
+	if [[ $1 == 'aryeo-runway' ]]
+		then
+		echo "Updating $1"
+		cd ~/Projects/aryeo-runway && git pull origin && npm install
+	fi
+
+	if [[ $1 == 'aryeo' ]]
+		then
+		echo "Updating $1"
+		cd ~/Projects/aryeo && git pull origin && composer install & npm install && php artisan migrate
+	fi
+}
