@@ -24,15 +24,7 @@ fi
 brew update
 
 # Install PHP environment packages
-brew install php
+brew install tmux
 
-# Install composer globally
-brew install composer
-
-# Install Valet via composer
-composer global require laravel/valet
-valet install
-
-# Park valet in Projects DIR
-cd ~/Projects
-valet park
+# Install tmux plugin manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

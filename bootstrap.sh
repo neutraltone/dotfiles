@@ -6,24 +6,31 @@ git pull origin master;
 
 function doIt() {
 	rsync --exclude ".git/" \
-	      --exclude ".DS_Store" \
-          --exclude "bootstrap.sh" \
-          --exclude "init" \
-    	  --exclude "js.sh" \
-          --exclude "ruby.sh" \
-          --exclude "php.sh" \
-	      --exclude "README.md" \
-          --exclude "LICENSE-MIT.txt" \
-          -avh --no-perms . ~; \
+		--exclude ".DS_Store" \
+		--exclude "bootstrap.sh" \
+		--exclude "init" \
+		--exclude "js.sh" \
+		--exclude "ruby.sh" \
+		--exclude "php.sh" \
+		--exclude "tmux.sh" \
+		--exclude "README.md" \
+		--exclude "LICENSE-MIT.txt" \
+		-avh --no-perms . ~; \
 	source ~/.bash_profile;
 }
 
 function homebrew() {
-	arch -x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" &&
+	(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/antonyphipps/.zprofile &&
+    	eval "$(/opt/homebrew/bin/brew shellenv)"
 }
 
 function homebrewPackages() {
 	bash ./brew.sh
+}
+
+function tmux() {
+	bash ./tmux.sh
 }
 
 function ruby() {
@@ -61,6 +68,11 @@ else
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
 		homebrewPackages;
 	fi;
+	read -p "Do you want to install tmux? (y/n) " -n 1;
+	echo "Installing tmux..."
+	if [[ $REPLY =~ ^[Yy]$ ]]; then
+		tmux;
+	fi;
 	read -p "Do you want to setup Ruby with RVM? (y/n) " -n 1;
 	echo "Installing Ruby with RVM..."
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -77,3 +89,5 @@ else
 		js;
 	fi;
 fi;
+
+brew cleanup

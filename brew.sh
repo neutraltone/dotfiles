@@ -78,12 +78,13 @@ brew install xz
 # Install other useful binaries.
 brew install ack
 brew install blueutil
-#brew install exiv2
 brew install git
 brew install git-lfs
 brew install gpg
 brew install gs
 brew install imagemagick
+brew install irssi
+brew install lazygit
 brew install lua
 brew install lynx
 brew install p7zip
@@ -92,12 +93,10 @@ brew install pv
 brew install rename
 brew install rlwrap
 brew install ssh-copy-id
+brew install tmux
 brew install tree
 brew install vbindiff
 brew install zopfli
-
-# CLI versions of Apps
-brew install ncspot
 
 # Nerd Fonts
 brew tap homebrew/cask-fonts &&
@@ -108,51 +107,57 @@ brew install --cask --appdir="/Applications" 1password
 brew install --cask --appdir="/Applications" alfred
 brew install --cask --appdir="/Applications" cleanmymac
 brew install --cask --appdir="/Applications" divvy
+brew install --cask --appdir="/Applications" gemini
+brew install --cask --appdir="/Applications" keybase
 brew install --cask --appdir="/Applications" the-unarchiver
 
 # Dev casks
+brew install --cask --appdir="/Applications" brave-browser
+brew install --cask --appdir="/Applications" dash
 brew install --cask --appdir="/Applications" dbngin
 brew install --cask --appdir="/Applications" firefox-developer-edition
 brew install --cask --appdir="/Applications" iterm2
 brew install --cask --appdir="/Applications" paw
-brew install --cask --appdir="/Applications" sourcetree
 brew install --cask --appdir="/Applications" tableplus
 brew install --cask --appdir="/Applications" tinkerwell
+brew install --cask --appdir="/Applications" transmit
 brew install --cask --appdir="/Applications" visual-studio-code
+brew install --cask --appdir="/Applications" warp
 
 # Design casks
-# brew install --cask --appdir="/Applications" affinity-designer // missing
-# brew install --cask --appdir="/Applications" affinity-photo // missing
-# brew install --cask --appdir="/Applications" affinity-publisher // missing
+brew install --cask --appdir="/Applications" figma
 brew install --cask --appdir="/Applications" imagealpha
 brew install --cask --appdir="/Applications" imageoptim
-brew install --cask --appdir="/Applications" sketch
-brew install --cask --appdir="/Applications" zeplin
 
 # Communication casks
 brew install --cask --appdir="/Applications" discord
 brew install --cask --appdir="/Applications" notion
+brew install --cask --appdir="/Applications" signal
 brew install --cask --appdir="/Applications" slack
 brew install --cask --appdir="/Applications" telegram
 brew install --cask --appdir="/Applications" tuple
-brew install --cask --appdir="/Applications" tweetbot
+brew install --cask --appdir="/Applications" whatsapp
 brew install --cask --appdir="/Applications" zoom
 
 # Misc casks
-brew install --cask --appdir="/Applications" binance
-brew install --cask --appdir="/Applications" firefox
+brew install --cask --appdir="/Applications" elgato-stream-deckq
+brew install --cask --appdir="/Applications" electrum
+brew install --cask --appdir="/Applications" electrum-ltc
+brew install --cask --appdir="/Applications" folx
+brew install --cask --appdir="/Applications" gpg-suite
 brew install --cask --appdir="/Applications" grandperspective
+brew install --cask --appdir="/Applications" handbrake
 brew install --cask --appdir="/Applications" lastfm
 brew install --cask --appdir="/Applications" ledger-live
 brew install --cask --appdir="/Applications" little-snitch
 brew install --cask --appdir="/Applications" micro-snitch
+brew install --cask --appdir="/Applications" mullvadvpn
 brew install --cask --appdir="/Applications" omnifocus
+brew install --cask --appdir="/Applications" omnioutliner
+brew install --cask --appdir="/Applications" sonos
 brew install --cask --appdir="/Applications" spotify
-brew install --cask --appdir="/Applications" steamcmd
-brew install --cask --appdir="/Applications" synergy
-# brew install --cask --appdir="/Applications" sonos // missing
 brew install --cask --appdir="/Applications" transmission
-brew install --cask --appdir="/Applications" twitch
+brew install --cask --appdir="/Applications" ultimaker-cura
 brew install --cask --appdir="/Applications" vlc
 
 # Remove outdated versions from the cellar.

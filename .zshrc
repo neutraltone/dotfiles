@@ -106,15 +106,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Load nodenv automatically
-eval "$(nodenv init -)"
-
-# Add php 7.4 to path
-export PATH="/usr/local/opt/php@7.4/bin:$PATH"
-export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
-
-# Add composer to path
-export PATH=$PATH:~/.composer/vendor/bin
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
