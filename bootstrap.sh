@@ -9,10 +9,14 @@ function doIt() {
 		--exclude ".DS_Store" \
 		--exclude "bootstrap.sh" \
 		--exclude "init" \
-		--exclude "js.sh" \
+		--exclude "brew.sh" \
+		--exclude "tmux.sh" \
 		--exclude "ruby.sh" \
 		--exclude "php.sh" \
-		--exclude "tmux.sh" \
+		--exclude "js.sh" \
+		--exclude "vim.sh" \
+		--exclude "osxprep.sh" \
+		--exclude "iterm.sh" \
 		--exclude "README.md" \
 		--exclude "LICENSE-MIT.txt" \
 		-avh --no-perms . ~; \
